@@ -5,8 +5,8 @@
 //  Created by Emin Bari on 10.08.2020.
 //
 
-import Foundation
 import WidgetKit
+import SwiftUI
 
 struct WidgetDataModel: TimelineEntry {
     let date: Date
@@ -16,5 +16,6 @@ struct WidgetDataModel: TimelineEntry {
     let windSpeed: Double
     let humidity: Int
     let pressure: Int
+    let weatherImage: UIImage
 }
 

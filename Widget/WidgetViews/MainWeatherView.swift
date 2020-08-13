@@ -12,24 +12,23 @@ struct MainWeatherView: View {
     let weatherDescription: String
     let padding: CGFloat
     let width: CGFloat
+    let image: UIImage
     
     let weatherImageSize: CGFloat = 48
     
     var body: some View {
-        HStack{
-            Image("sun_cloud")
+        HStack {
+            Image(uiImage: image)
                 .resizable()
+                .scaledToFill()
                 .frame(
                     width: weatherImageSize,
                     height: weatherImageSize)
-                .colorInvert()
             Spacer()
             Text("\(String(format: "%.f", temperature))℃")
-                .font(.title)
+                .font(.largeTitle)
                 .foregroundColor(Color.white)
         }
         .frame(width: width)
-        .padding(.horizontal, padding)
-        .padding(.top, padding)
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SideInfoView: View{
+struct SideInfoView: View {
     
     let description: String
     let city: String
@@ -17,20 +17,19 @@ struct SideInfoView: View{
     
     var customDateFormatter = DateFormatter()
     var day: String {
-        get{
+        get {
             return customDateFormatter.weekdaySymbols[Calendar.current.component(.weekday, from: Date())]
         }
     }
-    var date: String{
-        get{
+    var date: String {
+        get {
             customDateFormatter.setLocalizedDateFormatFromTemplate("d MMM yyyy")
             return customDateFormatter.string(from: Date())
         }
     }
     
-    
-    var body: some View{
-        VStack(alignment: .trailing){
+    var body: some View {
+        VStack(alignment: .trailing) {
             Text(day)
                 .bold()
                 .font(.title2)
@@ -43,7 +42,7 @@ struct SideInfoView: View{
                 .foregroundColor(Color.white)
                 .multilineTextAlignment(.trailing)
             Spacer()
-            HStack{
+            HStack {
                 Image(locationImageName)
                     .resizable()
                     .frame(width: imgSize, height: imgSize)

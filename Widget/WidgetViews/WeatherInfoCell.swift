@@ -14,11 +14,11 @@ struct WeatherInfoCell: View {
     
     let padding: CGFloat = 10
     
-    var body: some View{
-        HStack{
+    var body: some View {
+        HStack {
             Text(title)
                 .foregroundColor(.white)
-                .font(.caption)
+                .font(.callout)
             Spacer()
             Text("\(data)").foregroundColor(.white)
         }
@@ -26,4 +26,3 @@ struct WeatherInfoCell: View {
         .padding(.horizontal, padding)
     }
 }
-

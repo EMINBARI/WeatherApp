@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherLoader{
+class WeatherLoader {
     
     private var city: String
     private var requestUrl: String
@@ -20,19 +20,19 @@ class WeatherLoader{
         self.requestUrl = baseUrl + "?key=" + self.apiKey + "&q=" + city
     }
     
-    func fetchData(complited: @escaping (Result<Weather, Error>) -> ()){
+    func fetchData(complited: @escaping (Result<Weather, Error>) -> ()) {
         
-        guard let url = URL(string: requestUrl) else{
+        guard let url = URL(string: requestUrl) else {
             return assertionFailure("Url is not correct")
         }
         
-        URLSession.shared.dataTask(with: url){ (data, respons, error) in
+        URLSession.shared.dataTask(with: url) { (data, respons, error) in
             if error == nil {
-                do{
+                do {
                     let exchData = try JSONDecoder().decode(Weather.self, from: data!)
                     complited(.success(exchData))
                 }
-                catch{
+                catch {
                     complited(.failure(error))
                 }
             }

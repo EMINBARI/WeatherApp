@@ -23,4 +23,3 @@ struct Config: Widget {
         .description(Text("Shows weather info"))
     }
 }
-
